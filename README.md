@@ -5,6 +5,9 @@ Proyecto final del taller de git y github. Adaptación del juego de asteroids de
 * Entender el flujo de trabajo colaborativo en git / github 
 * Adaptar el juego __Asteroids__ atari con processing.
 
+# Participantes
+* Pablo Luna - JavaScript - Interfaz Gráfica: Menú
+
 --- 
 ​
 
