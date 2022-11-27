@@ -38,5 +38,8 @@ No deben borrar las ramas de features. Servirán para futura revisión.
 Cada cambio que se realice, debe tener su respectiva documentancion (algo simple), explicando que aporta el feature al proyecto. Nota: No es necesario explicar el funcionamiento técnico o el código fuente del feature. Esta explicacion 
 
 ## Estructura del Proyecto 
-Existirá un carpeta `/source` en donde estará todo el código del proyecto. Internamente se tienen las carpetas `/JS` y `\python`. Acorde al 
+Existirá un carpeta `/source` en donde estará todo el código del proyecto. Internamente se tienen las carpetas `/JS` y `\python`, en donde se encontrará todo el código necesario para el funcionamiento del juego. Como primer commit, se tiene la base en ambos lenguajes. 
+* En JS está el index principal con los scripts para comenzar a usar P5JS. 
+* En python está un main.py y un requirements.txt. Todo maneja de modulos externos debe manejarse desde el requirements.txt con entornos virtuales (virtualenv) y realizer el respectivo freeze en el txt para guardar los requerimientos. (Si tienen dudas con respecto a esto, escribanme) 
+
 
