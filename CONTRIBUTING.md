@@ -1,4 +1,4 @@
-# Contributing Asteroids 
+# Contributing Asteroids 
 Este documento explica los lineamientos de contribución al proyecto. 
 
 - Inicialmente, deben agregar su nombre al README del proyecto, con el lenguaje de su elección para el proyecto. (JS o Python), y aspecto del proyecto en el que se enfocará. (Leer más adelante)
@@ -34,9 +34,9 @@ Dentro de las ramas de feature, se deben agregar los respectivos commits que con
 
 No deben borrar las ramas de features. Servirán para futura revisión.
 
-## Documentacion 
+## Documentacion 
 Cada cambio que se realice, debe tener su respectiva documentancion (algo simple), explicando que aporta el feature al proyecto. Nota: No es necesario explicar el funcionamiento técnico o el código fuente del feature. Esta explicacion 
 
-## Estructura del Proyecto 
+## Estructura del Proyecto 
 Existirá un carpeta `/source` en donde estará todo el código del proyecto. Internamente se tienen las carpetas `/JS` y `\python`. Acorde al 
 
