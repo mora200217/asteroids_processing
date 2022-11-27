@@ -28,7 +28,7 @@ El repositorio tiene 3 ramas principales.
 La rama master estará bloqueada, y solo podrá actualizarse con el respectivo PR desde dev. Se realizará una revisión de los cambios y se parobará/rechazará la solicitud. 
 
 ## Manejo de Features 
-Cada nueva característica a incluir en el repositorio, será agregada como un nuevo __feature__ a dev. Para esto debe crearse una rama desde la última versión disponible de __dev__ y se llamará __f/<language>/<feature>__. Por ejemplo, si se dea agregar un sistema de puntuacion en el proyecto de JS, se podría llamar el feature score y la rama se crearía como __f/js/score__. 
+Cada nueva característica a incluir en el repositorio, será agregada como un nuevo __feature__ a dev. Para esto debe crearse una rama desde la última versión disponible de __dev__ y se llamará `f/language/feature`. Por ejemplo, si se dea agregar un sistema de puntuacion en el proyecto de JS, se podría llamar el feature score y la rama se crearía como `f/js/score`. 
 
 Dentro de las ramas de feature, se deben agregar los respectivos commits que consideren necesarios para estructurar el historial de la rama. Una vez terminado su respectivo feature, se enviará un PR a la rama dev, en donde el los miembros del equipo deben comentar, revisar y aprobar los cambios agregados antes de realizar el merge. 
 
