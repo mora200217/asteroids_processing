@@ -59,3 +59,13 @@ class Hitbox:
 
     def abajoIzquierda(self):
         return (self.izquierda(), self.abajo())
+    
+    def contiene(self, x, y):
+        if(self.izquierda() < x and x < self.derecha()):
+            return self.arriba() < y and self.abajo() > y
+        return False
+
+    def intersecta(self, hitbox):
+        if self.izquierda() < hitbox.derecha() and self.derecha() > hitbox.izquierda():
+            return self.arriba() < hitbox.abajo() and self.abajo() > hitbox.arriba()
+        return False
