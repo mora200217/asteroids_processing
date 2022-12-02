@@ -15,6 +15,14 @@ class Hitbox:
             stroke(self.color)
             stroke_weight(self.grosor)
             rect(self.x, self.y, self.ancho, self.alto)
+    
+    def setPosicion(self, x, y):
+        self.x = x
+        self.y = y
+
+    def setTamano(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
 
     def getAlto(self):
         return self.alto
@@ -27,3 +35,4 @@ class Hitbox:
 
     def getY(self):
         return self.y
+    
