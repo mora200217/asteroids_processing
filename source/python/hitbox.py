@@ -36,3 +36,15 @@ class Hitbox:
     def getY(self):
         return self.y
     
+    def arriba(self):
+        return self.y - (self.alto / 2)
+
+    def izquierda(self):
+        return self.x - (self.ancho / 2)
+
+    def abajo(self):
+        return self.y + (self.alto / 2)
+
+    def derecha(self):
+        return self.x + (self.ancho / 2)
+    
