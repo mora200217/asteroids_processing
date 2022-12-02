@@ -13,7 +13,7 @@ class Hitbox:
             noFill()
             rectMode(CENTER)
             stroke(self.color)
-            stroke_weight(self.grosor)
+            strokeWeight(self.grosor)
             rect(self.x, self.y, self.ancho, self.alto)
     
     def setPosicion(self, x, y):
