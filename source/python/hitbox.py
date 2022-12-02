@@ -15,3 +15,15 @@ class Hitbox:
             stroke(self.color)
             stroke_weight(self.grosor)
             rect(self.x, self.y, self.ancho, self.alto)
+
+    def getAlto(self):
+        return self.alto
+
+    def getAncho(self):
+        return self.ancho
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
