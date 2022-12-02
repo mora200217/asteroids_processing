@@ -7,3 +7,11 @@ class Hitbox:
         self.alto = alto
         self.color = color
         self.grosor = grosor
+    
+    def display(self):
+        if self.visible:
+            noFill()
+            rectMode(CENTER)
+            stroke(self.color)
+            stroke_weight(self.grosor)
+            rect(self.x, self.y, self.ancho, self.alto)
