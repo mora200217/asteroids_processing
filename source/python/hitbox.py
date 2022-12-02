@@ -48,3 +48,14 @@ class Hitbox:
     def derecha(self):
         return self.x + (self.ancho / 2)
     
+    def aribaDerecha(self):
+        return (self.derecha(), self.arriba())
+
+    def aribaIzquierda(self):
+        return (self.izquierda(), self.arriba())
+
+    def abajoDerecha(self):
+        return (self.derecha(), self.abajo())
+
+    def abajoIzquierda(self):
+        return (self.izquierda(), self.abajo())
