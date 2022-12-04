@@ -8,6 +8,11 @@ class Jugador:
         self.velocidad = 2
         self.velocidadGiro = 2
 
+
+    def setPosicion(self, x, y):
+        self.x = x
+        self.y = y
+
     def setAngulo(self, angulo):
 
         self.angulo = angulo
