@@ -16,6 +16,9 @@ class Hitbox:
             strokeWeight(self.grosor)
             rect(self.x, self.y, self.ancho, self.alto)
     
+    def setVisible(self, visible):
+        self.visible = visible
+        
     def setPosicion(self, x, y):
         self.x = x
         self.y = y
