@@ -5,9 +5,9 @@ lista_keys = []
 class App:
     def __init__(self):
         self.entidades = []
-        self.entidades.append(Jugador(20,20,lista_keys))
+        self.entidades.append(Jugador(20,20,Hitbox(ancho=22,alto=22,visible=True),lista_keys))
 
-    def update(self):
+    def draw(self):
         background(255)
         for entidad in self.entidades:
             entidad.update()
@@ -21,13 +21,14 @@ def setup():
     size(640, 360)
 
 def draw():
-    app.update()
+    app.draw()
 
-def keyPressed():
+def key_pressed(event):
     if key not in lista_keys:
         lista_keys.append(key)
 
-def keyReleased():
+def key_released(event):
+    return
     if key in lista_keys:
         lista_keys.remove(key)
-    
+

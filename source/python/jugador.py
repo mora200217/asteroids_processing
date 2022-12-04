@@ -1,20 +1,21 @@
 
 
 class Jugador:
-    def __init__(self, x, y, lista_keys, velocidad=2, velocidadGiro = 1):
+    def __init__(self, x, y, hitbox, lista_keys, velocidad=2, velocidadGiro=1):
         self.x = x
         self.y = y
         self.angulo = 0
         self.velocidad = velocidad
         self.velocidadGiro = velocidadGiro
         self.lista_keys = lista_keys
+        self.hitbox = hitbox
 
     def setPosicion(self, x, y):
         self.x = x
         self.y = y
+        self.hitbox.setPosicion(x, y)
 
     def setAngulo(self, angulo):
-
         self.angulo = angulo
         if self.angulo > 360:
             self.angulo = 0
@@ -33,7 +34,7 @@ class Jugador:
     def update(self):
         if len(self.lista_keys) == 0:
             return
-        
+
         if "a" in self.lista_keys:
             self.girarDerecha()
         elif "d" in self.lista_keys:
@@ -46,19 +47,23 @@ class Jugador:
             if self.angulo > 90 and self.angulo < 270:
                 catetoAdyacente = catetoAdyacente * -1
 
-            self.x = self.x + (catetoAdyacente * self.velocidad)
-            self.y = self.y + (catetoOpuesto * self.velocidad)
+            x = self.x + (catetoAdyacente * self.velocidad)
+            y = self.y + (catetoOpuesto * self.velocidad)
 
-            if self.x > width + 20:
-                self.x = -20
-            if self.x < -20:
-                self.x = width + 20
-            if self.y > height + 20:
-                self.y = -20
-            if self.y < -20:
-                self.y = height + 20
+            if x > width + 20:
+                x = -20
+            if x < -20:
+                x = width + 20
+            if y > height + 20:
+                y = -20
+            if y < -20:
+                y = height + 20
+            
+            self.setPosicion(x,y)
 
     def display(self):
+        self.hitbox.display()
+        print(self.hitbox.arriba())
         stroke(204, 102, 0)
         translate(self.x, self.y)
         rotate(radians(self.angulo + 90))
