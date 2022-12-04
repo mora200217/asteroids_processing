@@ -23,3 +23,9 @@ class Jugador:
 
     def getAngulo(self):
         return self.angulo
+
+    def girarIzquierda(self):
+        self.setAngulo(self.getAngulo() + (10 * self.velocidadGiro))
+
+    def girarDerecha(self):
+        self.setAngulo(self.getAngulo() - (10 * self.velocidadGiro))
