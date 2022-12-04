@@ -1,13 +1,12 @@
 
 
 class Jugador:
-    def __init__(self, x, y):
+    def __init__(self, x, y, velocidad=2, velocidadGiro = 1):
         self.x = x
         self.y = y
         self.angulo = 0
-        self.velocidad = 2
-        self.velocidadGiro = 2
-
+        self.velocidad = velocidad
+        self.velocidadGiro = velocidadGiro
 
     def setPosicion(self, x, y):
         self.x = x
@@ -29,7 +28,6 @@ class Jugador:
 
     def girarDerecha(self):
         self.setAngulo(self.getAngulo() - (10 * self.velocidadGiro))
-
 
     def update(self):
         if not keyPressed:
