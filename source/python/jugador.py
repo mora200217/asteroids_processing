@@ -1,12 +1,13 @@
 
 
 class Jugador:
-    def __init__(self, x, y, velocidad=2, velocidadGiro = 1):
+    def __init__(self, x, y, lista_keys, velocidad=2, velocidadGiro = 1):
         self.x = x
         self.y = y
         self.angulo = 0
         self.velocidad = velocidad
         self.velocidadGiro = velocidadGiro
+        self.lista_keys = lista_keys
 
     def setPosicion(self, x, y):
         self.x = x
@@ -30,15 +31,15 @@ class Jugador:
         self.setAngulo(self.getAngulo() - (10 * self.velocidadGiro))
 
     def update(self):
-        if not keyPressed:
+        if len(self.lista_keys) == 0:
             return
-            
-        if key == "a":
+        
+        if "a" in self.lista_keys:
             self.girarDerecha()
-        elif key == "d":
+        elif "d" in self.lista_keys:
             self.girarIzquierda()
 
-        if key == "w":
+        if "w" in self.lista_keys:
             catetoOpuesto = sin(radians(self.angulo))
             catetoAdyacente = sqrt(1 - pow(catetoOpuesto, 2))
 

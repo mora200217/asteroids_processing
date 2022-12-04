@@ -1,12 +1,11 @@
 from hitbox import Hitbox
 from jugador import Jugador
 
+lista_keys = []
 class App:
     def __init__(self):
         self.entidades = []
-        self.entidades.append(Jugador(20,20))
-        self.h = Hitbox(visible=True)
-        self.h2 = Hitbox(visible=True)
+        self.entidades.append(Jugador(20,20,lista_keys))
 
     def update(self):
         background(255)
@@ -23,3 +22,12 @@ def setup():
 
 def draw():
     app.update()
+
+def keyPressed():
+    if key not in lista_keys:
+        lista_keys.append(key)
+
+def keyReleased():
+    if key in lista_keys:
+        lista_keys.remove(key)
+    
