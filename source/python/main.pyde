@@ -1,19 +1,25 @@
-# main.pyde
 from hitbox import Hitbox
+from jugador import Jugador
 
+class App:
+    def __init__(self):
+        self.entidades = []
+        self.entidades.append(Jugador(20,20))
+        self.h = Hitbox(visible=True)
+        self.h2 = Hitbox(visible=True)
+
+    def update(self):
+        background(255)
+        for entidad in self.entidades:
+            entidad.update()
+        
+        for entidad in self.entidades:
+            entidad.display()
 
 def setup():
-    global h
-    global h2
+    global app
+    app = App()
     size(640, 360)
-    h = Hitbox(visible = True)
-    h2 = Hitbox(visible = True)
-
 
 def draw():
-    background(255)
-    
-    h2.display()
-    print(h.intersecta(h2))
-    h.setPosicion(mouseX, mouseY)  #  sdasssssdsa
-    h.display()
+    app.update()
