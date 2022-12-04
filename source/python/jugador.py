@@ -7,3 +7,14 @@ class Jugador:
         self.angulo = 0
         self.velocidad = 2
         self.velocidadGiro = 2
+
+    def setAngulo(self, angulo):
+
+        self.angulo = angulo
+        if self.angulo > 360:
+            self.angulo = 0
+        elif self.angulo < 0:
+            self.angulo = 360
+
+    def getAngulo(self):
+        return self.angulo
