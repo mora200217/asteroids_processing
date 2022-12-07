@@ -14,6 +14,6 @@ def draw():
     background(255)
     
     h2.display()
-    print(h.intersecta(h2))
-    h.setPosicion(mouseX, mouseY)  #  sdasssssdsa
+    h.setPosicion(mouseX, mouseY)
     h.display()
+    print(h.intersecta(h2))
