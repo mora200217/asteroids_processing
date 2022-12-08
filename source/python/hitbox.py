@@ -1,5 +1,5 @@
 class Hitbox:
-    def __init__(self, x=81, y=81,  ancho=63, alto=80, visible=False, color = 0, grosor = 3):
+    def __init__(self, x=81, y=81,  ancho=63, alto=80, visible=False, color = 0, grosor = 1):
         self.visible = visible
         self.x = x
         self.y = y
