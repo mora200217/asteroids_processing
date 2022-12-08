@@ -69,6 +69,10 @@ class Jugador:
                        }
 
     def setPosicion(self, x, y):
+        """
+        Establece la posicion respetando el borde
+        teletraspontandolo al llegar al borde
+        """
         if x > width + 20:
             x = -20
         if x < -20:
@@ -92,6 +96,9 @@ class Jugador:
         return self.angulo
 
     def girarIzquierda(self):
+        """
+        Gira el jugador a la izquierda repetando la aceleracion y la velocidad maxima
+        """
         self.velocidadGiro = self.velocidadGiro - self.aceleracionGiro
         
         if self.velocidadGiro > self.velocidadMaximaGiro:
@@ -100,6 +107,9 @@ class Jugador:
         self.setAngulo(self.getAngulo() + self.velocidadGiro)
 
     def girarDerecha(self):
+        """
+        Gira el jugador a la derecha repetando la aceleracion y la velocidad maxima
+        """
         self.velocidadGiro = self.velocidadGiro + self.aceleracionGiro
         
         if self.velocidadGiro > self.velocidadMaximaGiro:
@@ -108,6 +118,9 @@ class Jugador:
         self.setAngulo(self.getAngulo() + self.velocidadGiro)
 
     def frenarGiro(self):
+        """
+        Disminuye la velocidad del giro respetando la friccion de giro
+        """
         if self.velocidadGiro > 0:
             self.velocidadGiro = self.velocidadGiro - self.friccionGiro
             
@@ -123,18 +136,35 @@ class Jugador:
         self.setAngulo(self.getAngulo() + self.velocidadGiro)
 
     def acelerar(self):
+        """
+        Aplica la aceleracion al jugador respetendo la variable de aceleracion
+        """
         self.velocidad = self.velocidad + self.aceleracion
         
         if self.velocidad >= self.velocidadMaxima:
             self.velocidad = self.velocidadMaxima
 
     def frenar(self):
+        """
+        Disminuye la velocidad al jugador respetando la friccion
+        """
         self.velocidad = self.velocidad - self.friccion
         
         if self.velocidad < 0:
             self.velocidad = 0
 
     def getCatetos(self):
+        """
+        Retorna los catetos de un triangulo rectangulo de hipotenusa 1 y el angulo del jugador para facilitar calculos
+
+        Returns
+        -------
+        catetoOpuesto float
+            Retorna el cateto opuesto con respeco al angulo del jugador.
+
+        catetoAdyacente float
+            Retorna el cateto adyacente con respeco al angulo del jugador.
+        """
         catetoOpuesto = sin(radians(self.angulo))
         catetoAdyacente = sqrt(1 - pow(catetoOpuesto, 2))
 
@@ -144,6 +174,11 @@ class Jugador:
         return catetoOpuesto, catetoAdyacente
 
     def calcularPocicion(self):
+        """
+        Ejecuta la logiga de movimiento con las variables
+        del jugador y estableciendo la posicion del jugador
+        a la proporcionada por los calculos
+        """
         catetoOpuesto, catetoAdyacente = self.getCatetos()
 
         self.dx = catetoAdyacente * self.velocidad
@@ -154,7 +189,10 @@ class Jugador:
         self.setPosicion(x, y)
 
     def update(self):
-        print(self.velocidadGiro, self.angulo)
+        """
+        Administra las acciones dadas por las teclas presionadas
+        actualizando posiciones y estados del jugados
+        """
         if not keyPressed:
             self.frenar()
             self.frenarGiro()
@@ -179,6 +217,9 @@ class Jugador:
         self.calcularPocicion()
 
     def display(self):
+        """
+        Muestra el jugador y hitbox
+        """
         self.hitbox.display()
         stroke(204, 102, 0)
         translate(self.x, self.y)
